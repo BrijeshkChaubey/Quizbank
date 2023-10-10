@@ -20,6 +20,7 @@ function Question() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [data, setData] = useState(null);
   const [answers, setAnswers] = useState();
+  const [submitanser,setSubmitanser]  = useState();
 
   useEffect(() => {
     const apiUrl = 'https://api.visionlanguageexperts.in/api/questions';
@@ -64,7 +65,8 @@ function Question() {
   };
   const handleSubmit = (id) => {
    
-
+    setSubmitanser(answers)
+ 
     const apiUrl = ` https://api.visionlanguageexperts.in/api/store/?question_id=${id}&user_id=1&answers=${answers}`; // Replace with your API endpoint
 
     axios
@@ -88,7 +90,23 @@ function Question() {
         </Typography>
       )}
       <Grid container justifyContent="center">
-        <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={3}>
+          {data?.data?.questions && (
+            <Paper elevation={3} style={{ padding: '16px' }}>
+              <Typography variant="h6" gutterBottom>
+                Questions List
+              </Typography>
+              <List>
+                {data?.data?.questions.map((question, index) => (
+                  <ListItem button key={index} onClick={() => handleQuestionSelect(index)}>
+                    <ListItemText primary={`Question ${question.id}`} />
+                  </ListItem>
+                ))}
+              </List>
+            </Paper>
+          )}
+        </Grid>
+        <Grid item xs={12} md={8}>
           {data?.data?.questions && (
             <Card variant="outlined">
               <CardContent>
@@ -107,26 +125,21 @@ function Question() {
                   {currentQuestion < data?.data?.questions.length - 1 && <Button onClick={handleNextClick}>Next</Button>}
                    <Button onClick={()=>handleSubmit(data?.data?.questions[currentQuestion].id)}>Submit</Button>
                 </MuiButtonGroup>
+                <Typography variant="h5" component="div" gutterBottom>
+                Your Submitted Answser
+                </Typography>
+                <TextareaAutosize
+                  minRows={4}
+                  placeholder="Your Submitted Answser"
+                  style={{ width: '100%', padding: '8px', fontSize: '16px' ,height:'55px'}}
+                  value={submitanser}
+                 
+                />
               </CardContent>
             </Card>
           )}
         </Grid>
-        <Grid item xs={12} md={6}>
-          {data?.data?.questions && (
-            <Paper elevation={3} style={{ padding: '16px' }}>
-              <Typography variant="h6" gutterBottom>
-                Questions
-              </Typography>
-              <List>
-                {data?.data?.questions.map((question, index) => (
-                  <ListItem button key={index} onClick={() => handleQuestionSelect(index)}>
-                    <ListItemText primary={`Question ${question.id}`} />
-                  </ListItem>
-                ))}
-              </List>
-            </Paper>
-          )}
-        </Grid>
+       
       </Grid>
     </Container>
   );
