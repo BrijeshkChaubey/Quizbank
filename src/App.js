@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+// App.js
+import React, { useEffect, useState } from 'react';
 import './App.css';
+// import QuestionList from './QuestionList';
+import Question from './Question';
+// import AnswerBar from './AnswerBar';
+import axios from 'axios';
 
 function App() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answers, setAnswers] = useState([]);
+  
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <QuestionList questions={data} setCurrentQuestion={setCurrentQuestion} /> */}
+      <Question />
+      {/* <AnswerBar answers={answers} /> */}
     </div>
   );
 }
