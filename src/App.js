@@ -1,10 +1,12 @@
 // App.js
 import React, { useEffect, useState } from 'react';
 import './App.css';
-// import QuestionList from './QuestionList';
-import Question from './Question';
-// import AnswerBar from './AnswerBar';
+
+
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Page from './Page';
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -14,9 +16,10 @@ function App() {
 
   return (
     <div className="App">
-      {/* <QuestionList questions={data} setCurrentQuestion={setCurrentQuestion} /> */}
-      <Question />
-      {/* <AnswerBar answers={answers} /> */}
+       <ToastContainer />
+     
+      <Page/>
+     
     </div>
   );
 }

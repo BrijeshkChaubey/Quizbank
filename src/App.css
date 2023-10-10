@@ -1,5 +1,171 @@
-.App {
+.firstBox{
+
+  display: flex;
+  gap: 5px;
+  font-size: smaller;
+  font-weight: lighter;
+
+
+}
+
+
+
+.container{
+  width: 65%;
+  margin: auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 30px;
+  margin-top: 50px;
+  display: flex;
+  gap: 100px;
+}
+
+.secondBox{
+  color: gray;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding-top:40px;
+  padding-bottom: 20px;
+  width:600px;
+}
+
+.answerSection{
+  height: 300px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.buttonsContainer{
+padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.btnFirstBox{
+  display: flex;
+  gap: 10px;
+
+}
+.btnFirstBox button{
+  border-radius: 25px;
+  width: 100px;
+  height: 37px;
+  background-color: #5D87FF;
+  color: whitesmoke;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 15px;
+  
+}
+
+
+.nextBtn{
+
+  border-radius: 25px;
+  width: 100px;
+  height: 37px;
+  background-color: #5D87FF;
+  color: whitesmoke;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 25px;
+}
+
+
+
+.btnSecondBox button{
+  border-radius: 25px;
+  width: 100px;
+  height: 37px;
+  background-color: #13deb9;
+  color: whitesmoke;
+  border: none;
+  
+}
+
+
+
+button:hover{
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.lastBox div{
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+
+}
+.lastBox{
+  margin-top: 30px;
+}
+
+.questionListBox{
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 20%;
+  border-right: 0.5px solid rgb(196, 195, 195) ;
+  height: 500px;
+  
+
+  
+
+  overflow-y: scroll;
+
+
+  
+}
+.questionListBox div{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 0.5px solid rgb(196, 195, 195);
+  cursor: pointer;
+}
+
+.questionListBox div:hover{
+
+  border: 1px solid transparent ;
+}
+
+.firstContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.dateTimeContainer{
+
+  display: flex;
+
+  gap: 10px;
+}
+
+.dateTimeContainer div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fbf2ef;
+padding-left: 10px;
+color: orange;
+padding-right: 10px;
+padding-top: 2px;
+padding-bottom: 2px;
+  border-radius: 20px;
+}
+/* .App {
   text-align: center;
+ 
+  
 }
 
 .App-logo {
@@ -35,4 +201,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
